@@ -11,3 +11,5 @@ class caracteristicas_campeonato(models.Model):
     serieB = models.BooleanField(default=False)
     puntos_totales =models.BooleanField(default=False)
     
+    def __str__(self):
+        return self.nombre_campeonato

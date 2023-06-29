@@ -13,3 +13,6 @@ class Parejas(models.Model):
         self.Nombre_pareja = self.Jugador1 + ' y ' + self.Jugador2  # Concatenación de los campos
         super(Parejas, self).save(*args, **kwargs)
 
+    def __str__(self):
+        return self.Nombre_pareja
+    
