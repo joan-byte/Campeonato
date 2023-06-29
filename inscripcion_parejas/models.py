@@ -6,7 +6,7 @@ class Parejas(models.Model):
     Jugador1 = models.CharField(max_length=50)
     Jugador2 = models.CharField(max_length=50)
     Club_pertenencia = models.CharField(max_length=50)
-    Numero_pareja = models.IntegerField(auto_created=1)   #numero de pareja
+    Numero_pareja = models.IntegerField(default=0)   #numero de pareja
 
     def pareja(self):
         cadena = "{0} {1}"
