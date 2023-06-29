@@ -7,10 +7,9 @@ class Parejas(models.Model):
     Jugador2 = models.CharField(max_length=50)
     Club_pertenencia = models.CharField(max_length=50)
     Numero_pareja = models.IntegerField(default=0)   #numero de pareja
+    Nombre_pareja = models.CharField(max_length=200, blank=True)  # Campo que almacenará la concatenación
 
-    def pareja(self):
-        cadena = "{0} {1}"
-        return cadena.format(self.Jugador1, self.Jugador2)
-    
-pareja = Parejas(Jugador1="Jugador1", Jugador2="Jugador2")  #creamos una pareja
+    def save(self, *args, **kwargs):
+        self.Nombre_pareja = self.Jugador1 + ' y ' + self.Jugador2  # Concatenación de los campos
+        super(Parejas, self).save(*args, **kwargs)
 
