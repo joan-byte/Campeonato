@@ -1,6 +1,7 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from rest_framework import viewsets
+from .models import caracteristicas_campeonato
+from .serializers import ConfiguracionSerializer
 
-# Create your views here.
-def hello(request):
-    return HttpResponse("<h1>Hello world</h1>")
+class ConfiguracionViewSet(viewsets.ModelViewSet):
+    queryset = caracteristicas_campeonato.objects.all()
+    serializer_class = ConfiguracionSerializer
