@@ -9,6 +9,7 @@ router.register(r'inscripcion_parejas', views.InscripcionParejasViewSet, basenam
 
 urlpatterns = [
     path('api/v1/', include(router.urls)),
-    path('docs/', include_docs_urls (title=' Parejas'))
+    
+    
 ]
     
